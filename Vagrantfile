@@ -142,7 +142,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     phpMyAdmin.vm.provision :docker do |d|
       d.build_image "/vagrant", args: "-t centos-mysql-phpmyadmin --no-cache=false"
-      d.run "centos-mysql-phpmyadmin", args: "-d -p 80:80 -m 512m", cmd: "/run.sh", image: "centos-mysql-phpmyadmin:latest" ,daemonize: true
+      d.run "centos-mysql-phpmyadmin", args: "-d -p 80:80", cmd: "/run.sh", image: "centos-mysql-phpmyadmin:latest" ,daemonize: true
     end
 
     phpMyAdmin.vm.synced_folder folder, "/vagrant"
