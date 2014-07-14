@@ -123,7 +123,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     phpNginx.vm.network "forwarded_port", guest: 80, host: 8082, autocorrect: true
 
-    folder = "./centos-php-mysql/"
+    folder = "./centos-nginx-php-hhvm/"
 
    phpNginx.vm.provision :docker do |d|
       d.build_image "/vagrant", args: "-t centos-nginx-php5-hhvm --no-cache=false"
